@@ -3,6 +3,7 @@
     package="com.hci.obtt">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_main"
         android:label="@string/app_name"
