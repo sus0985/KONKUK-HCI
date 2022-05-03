@@ -3,4 +3,11 @@
 
     <string name="login">Login</string>
     <string name="sign_up">Sign-up</string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호</string>
+    <string name="find_password">비밀번호 찾기</string>
+    <string name="or">Or</string>
+    <string name="login_with_facebook">Log In with Facebook</string>
+    <string name="login_with_google">Log In with Google</string>
+
 </resources>
