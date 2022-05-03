@@ -75,8 +75,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:background="@drawable/rect_rounded_cobalt_blue"
-                android:backgroundTint="#1877F2"
+                android:background="@drawable/rect_rounded_facebook"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/buttonLogin">
@@ -104,8 +105,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:background="@drawable/rect_rounded_cobalt_blue"
-                android:backgroundTint="#ffffff"
+                android:background="@drawable/rect_rounded_google"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/buttonFacebook">
