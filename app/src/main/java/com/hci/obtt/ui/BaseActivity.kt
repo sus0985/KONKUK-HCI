@@ -1,6 +1,7 @@
 package com.hci.obtt.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -28,5 +29,9 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes private val layoutId
         }
 
         super.onDestroy()
+    }
+
+    fun showToast(id: Int) {
+        Toast.makeText(this, getString(id), Toast.LENGTH_SHORT).show()
     }
 }

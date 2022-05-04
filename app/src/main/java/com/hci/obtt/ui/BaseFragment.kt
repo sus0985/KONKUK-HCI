@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -36,5 +37,9 @@ abstract class BaseFragment<T : ViewDataBinding>(@LayoutRes private val layoutId
         super.onDestroyView()
 
         _binding = null
+    }
+
+    fun showToast(id: Int) {
+        Toast.makeText(context, getString(id), Toast.LENGTH_SHORT).show()
     }
 }
