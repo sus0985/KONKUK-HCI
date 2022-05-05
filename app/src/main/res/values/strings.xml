@@ -15,4 +15,7 @@
     <string name="input_id_password">아이디 혹은 비밀번호를 입력하세요.</string>
     <string name="wrong_id_password">아이디 혹은 비밀번호가 잘못됐습니다.</string>
     <string name="go_login">이미 회원인가요?\n로그인하기 -></string>
+
+    <string name="exist_id">존재하는 아이디입니다.</string>
+    <string name="check_password">동일한 비밀번호를 입력해주세요.</string>
 </resources>

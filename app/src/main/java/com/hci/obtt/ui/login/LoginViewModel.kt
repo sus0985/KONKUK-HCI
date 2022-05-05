@@ -33,4 +33,12 @@ class LoginViewModel : ViewModel() {
             }
         }
     }
+
+    fun checkIdExist(id: String): Boolean {
+        return repository.checkIdExist(id)
+    }
+
+    fun signUp(user: User) {
+        repository.signUp(user)
+    }
 }

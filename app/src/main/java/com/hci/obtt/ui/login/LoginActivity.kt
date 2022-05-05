@@ -12,10 +12,13 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivityLoginBinding
 import com.hci.obtt.ui.base.BaseActivity
+import com.hci.obtt.ui.login.LoginActivity.ViewPagerAdapter.Companion.TAB_LOGIN
 import com.hci.obtt.ui.main.MainActivity
 import kotlinx.coroutines.flow.collect
 
-class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login), LoginFragment.LoginInteraction {
+class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login),
+    LoginFragment.LoginInteraction,
+    SignUpFragment.SignUpInteraction {
 
     private val viewModel by viewModels<LoginViewModel>()
     private val viewPagerAdapter by lazy { ViewPagerAdapter(this, titles) }
@@ -55,12 +58,18 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     }
 
 
+    override fun changeLogin() {
+        binding.viewPager.setCurrentItem(TAB_LOGIN, true)
+    }
+
+
     private class ViewPagerAdapter(
         activity: BaseActivity<ActivityLoginBinding>,
         private val titles: Array<String>
     ) : FragmentStateAdapter(activity) {
 
         override fun getItemCount(): Int = titles.size
+
 
         override fun createFragment(@LoginTab position: Int): Fragment {
             val fragment: Fragment = when (position) {
@@ -72,9 +81,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             return fragment
         }
 
-
         companion object {
             const val TAB_LOGIN = 0
+
             const val TAB_SIGN_UP = 1
 
             @IntDef(TAB_LOGIN, TAB_SIGN_UP)
@@ -87,6 +96,5 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     companion object {
 
         private const val TAG = "LoginActivity"
-
     }
 }
