@@ -2,19 +2,132 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_up"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:text="@string/kr_sign_up"
+                android:textColor="@color/cobalt_blue"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/rect_rounded_black"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:src="@drawable/ic_google_logo"
+                app:layout_constraintBottom_toBottomOf="@id/buttonFacebook"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/buttonFacebook"
+                app:layout_constraintTop_toTopOf="@id/buttonFacebook" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect_rounded_black"
+                android:backgroundTint="@color/white"
+                android:padding="10dp"
+                android:src="@drawable/ic_facebook_sign_up"
+                app:layout_constraintBottom_toBottomOf="@id/textSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textSignUp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rect_rounded_black"
+                android:backgroundTint="@color/white"
+                android:hint="@string/id"
+                android:padding="18dp"
+                android:textColor="@color/black"
+                android:textColorHint="#A0A0A0"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textSignUp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rect_rounded_black"
+                android:backgroundTint="@color/white"
+                android:hint="@string/password"
+                android:padding="18dp"
+                android:textColor="@color/black"
+                android:textColorHint="#A0A0A0"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextId" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextConfirmPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rect_rounded_black"
+                android:backgroundTint="@color/white"
+                android:hint="@string/confirm_password"
+                android:padding="18dp"
+                android:textColor="@color/black"
+                android:textColorHint="#A0A0A0"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/rect_rounded_cobalt_blue"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@string/sign_up"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/textGoLogin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextConfirmPassword" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textGoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/go_login"
+                android:textColor="#B3B3B3"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/buttonLogin" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </layout>
