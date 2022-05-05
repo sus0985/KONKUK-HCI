@@ -22,8 +22,7 @@ class LoginViewModel : ViewModel() {
     val password = MutableLiveData("")
 
     fun isIdAndPasswordNotEmpty(): Boolean {
-        return (id.value?.isNotEmpty() ?: return false) && (password.value?.isNotEmpty()
-            ?: return false)
+        return (id.value?.isNotEmpty() ?: false) && (password.value?.isNotEmpty() ?: false)
     }
 
     fun checkUserInfo() {
