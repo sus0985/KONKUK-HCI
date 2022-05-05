@@ -11,7 +11,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivityLoginBinding
-import com.hci.obtt.ui.BaseActivity
+import com.hci.obtt.ui.base.BaseActivity
 import com.hci.obtt.ui.main.MainActivity
 import kotlinx.coroutines.flow.collect
 

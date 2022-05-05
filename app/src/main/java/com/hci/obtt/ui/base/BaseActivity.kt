@@ -1,4 +1,4 @@
-package com.hci.obtt.ui
+package com.hci.obtt.ui.base
 
 import android.os.Bundle
 import android.widget.Toast

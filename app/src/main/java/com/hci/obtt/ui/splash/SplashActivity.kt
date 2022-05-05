@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivitySplashBinding
-import com.hci.obtt.ui.BaseActivity
+import com.hci.obtt.ui.base.BaseActivity
 import com.hci.obtt.ui.login.LoginActivity
 import kotlinx.coroutines.*
 

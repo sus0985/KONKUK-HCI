@@ -6,7 +6,7 @@ import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.hci.obtt.R
 import com.hci.obtt.databinding.FragmentLoginBinding
-import com.hci.obtt.ui.BaseFragment
+import com.hci.obtt.ui.base.BaseFragment
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login) {
 
