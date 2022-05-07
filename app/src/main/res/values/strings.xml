@@ -24,4 +24,8 @@
     <string name="bookmark">BOOKMARK</string>
     <string name="my_page">MY PAGE</string>
 
+    <string name="kr_home">홈</string>
+    <string name="timeline">시간별</string>
+    <string name="community">커뮤니티</string>
+
 </resources>

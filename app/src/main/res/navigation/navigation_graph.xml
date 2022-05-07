@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.hci.obtt.ui.home.HomeFragment"
+        android:name="com.hci.obtt.ui.tab.TabFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_tab" />
 
     <fragment
         android:id="@+id/searchFragment"

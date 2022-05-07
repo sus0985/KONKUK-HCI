@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.login.LoginActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.hci.obtt.ui.tab.TabFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/image_icon"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/icon"
-            app:layout_constraintDimensionRatio="1:0.35"
-            app:layout_constraintEnd_toEndOf="parent"
+        <FrameLayout
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" >
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
@@ -27,7 +30,7 @@
             android:background="@color/background_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_icon"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
             app:tabTextColor="@color/white" />
 
