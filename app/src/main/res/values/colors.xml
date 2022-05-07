@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_dark">#2e2e2f</color>
+    <color name="background_dark">#1F1F29</color>
     <color name="cobalt_blue">#686dcd</color>
     <color name="dark_cobalt_blue">#45499C</color>
 

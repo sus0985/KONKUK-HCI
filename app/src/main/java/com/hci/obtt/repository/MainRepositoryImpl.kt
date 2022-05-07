@@ -5,18 +5,28 @@ import android.util.Log
 import com.hci.obtt.model.User
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import java.lang.Exception
 
 class MainRepositoryImpl(private val sharedPreferences: SharedPreferences) : MainRepository {
 
     override fun isUserInfoCorrect(user: User): Flow<Boolean> = flow {
         val userData = sharedPreferences.getString("Users", "") ?: ""
 
+        if (userData.isEmpty()) {
+            emit(false)
+            return@flow
+        }
+
         Log.d(TAG, "isUserInfoCorrect: $userData")
         userData.split(",").forEach {
-            val (id, pw) = it.split(":")
-            if (user.id == id && user.password == pw) {
-                emit(true)
-                return@flow
+            try {
+                val (id, pw) = it.split(":")
+                if (user.id == id && user.password == pw) {
+                    emit(true)
+                    return@flow
+                }
+            } catch (e: Exception) {
+                return@forEach
             }
         }
 
