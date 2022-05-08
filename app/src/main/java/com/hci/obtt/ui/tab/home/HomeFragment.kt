@@ -4,25 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.hci.obtt.R
 import com.hci.obtt.databinding.FragmentHomeBinding
 import com.hci.obtt.databinding.ItemContentsBinding
 import com.hci.obtt.databinding.ItemRankingBinding
 import com.hci.obtt.model.Contents
-import com.hci.obtt.model.Ranking
-import com.hci.obtt.model.Recommendation
+import com.hci.obtt.model.Video
 import com.hci.obtt.ui.base.BaseFragment
+import com.hci.obtt.ui.tab.TabViewModel
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
+    private val viewModel by activityViewModels<TabViewModel>()
     private val rankingAdapter = object : RecyclerView.Adapter<RankingViewHolder>() {
 
-        private val item = listOf(
-            Ranking(1, 1, "파친코", "Apple+", "1시간/6화", "드라마", 4.9f),
-            Ranking(2, 2, "스파이 패밀리", "Netflix", "1시간/12화", "애니메이션", 4.8f),
-            Ranking(3, 3, "나이트메어 엘리", "Disney+", "2시간 17분", "영화", 4.5f)
-        )
+        private var item = listOf<Video>()
+
+        fun setList(list: List<Video>) {
+            item = list
+            notifyItemRangeChanged(0, list.size)
+        }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingViewHolder {
             val binding = ItemRankingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -58,33 +65,41 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     }
 
-
     private val recommendationAdapter by lazy { RecommendationAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.recyclerRecommendation.adapter = recommendationAdapter
-        binding.recyclerRanking.adapter = rankingAdapter
-        binding.recyclerContents.adapter = contentsAdapter
+        with(binding) {
+            recyclerRecommendation.adapter = recommendationAdapter
+            recyclerRanking.adapter = rankingAdapter
+            recyclerContents.adapter = contentsAdapter
 
-        recommendationAdapter.submitList(
-            listOf(
-                Recommendation(0, "a"),
-                Recommendation(1, "a"),
-                Recommendation(2, "a"),
-                Recommendation(3, "a"),
-                Recommendation(4, "a"),
-                Recommendation(5, "a"),
-                Recommendation(6, "a")
-            )
-        )
+            imageViewSpotLight.clipToOutline = true
+            Glide.with(imageViewSpotLight)
+                .load("https://user-images.githubusercontent.com/83066991/167290386-55bb769f-607a-485d-ac9b-8210057a9f2b.png")
+                .into(imageViewSpotLight)
+        }
+
+        lifecycleScope.launch {
+            viewModel.getVideoData().collect {
+                recommendationAdapter.submitList(it)
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.getVideoData().collect {
+                rankingAdapter.setList(it)
+            }
+        }
     }
 
     private class RankingViewHolder(private val binding: ItemRankingBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Ranking) {
+        fun bind(item: Video) {
             with(binding) {
+                imageThumbnail.clipToOutline = true
+                Glide.with(imageThumbnail).load(item.thumbnail).into(imageThumbnail)
                 textTitle.text = item.title
                 textGenre.text = item.genre
                 textOtt.text = item.ott

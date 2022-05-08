@@ -1,11 +1,11 @@
 package com.hci.obtt.model
 
-data class Ranking(
+data class Video(
     val id: Int,
-    val ranking: Int,
     val title: String,
+    val thumbnail: String,
+    val star: Float,
     val ott: String,
     val runningTime: String,
-    val genre: String,
-    val star: Float
+    val genre: String
 )
