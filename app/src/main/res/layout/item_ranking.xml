@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_rounded_black">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rect_rounded_black"
+            android:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageThumbnail"
+            app:layout_constraintTop_toTopOf="@id/imageThumbnail"
+            tools:text="파친코" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textOtt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:drawableStart="@drawable/ic_tv"
+            android:drawablePadding="4dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/textTitle"
+            app:layout_constraintTop_toBottomOf="@id/textTitle"
+            tools:text="Apple+" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textRunningTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_timer"
+            android:drawablePadding="4dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/textOtt"
+            app:layout_constraintTop_toBottomOf="@id/textOtt"
+            tools:text="1시간/12화" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:drawableStart="@drawable/ic_play"
+            android:drawablePadding="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/textRunningTime"
+            app:layout_constraintTop_toTopOf="@id/textRunningTime"
+            tools:text="드라마" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rect_rounded_black"
+            android:backgroundTint="#575b66"
+            android:drawableEnd="@drawable/ic_star"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:drawableTint="#ebb513"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textTitle"
+            tools:text="4.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

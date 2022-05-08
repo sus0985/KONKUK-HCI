@@ -1,6 +1,7 @@
 package com.hci.obtt.ui.tab
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.annotation.IntDef
 import androidx.fragment.app.Fragment
@@ -27,12 +28,21 @@ class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG, "onViewCreated() called with: view = [$view], savedInstanceState = [$savedInstanceState]")
 
         binding.viewPager.adapter = viewPagerAdapter
+
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = titles[position]
         }.attach()
     }
+
+    override fun onPause() {
+        binding.viewPager.adapter = null
+
+        super.onPause()
+    }
+
 
     private class ViewPagerAdapter(
         activity: FragmentActivity,

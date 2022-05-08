@@ -28,4 +28,7 @@
     <string name="timeline">시간별</string>
     <string name="community">커뮤니티</string>
 
+    <string name="recommendation">맞춤추천!</string>
+    <string name="more">더보기 ></string>
+    <string name="ranking">OBTT 랭킹!</string>
 </resources>
