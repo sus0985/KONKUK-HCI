@@ -17,7 +17,6 @@ import com.hci.obtt.ui.tab.timeline.TimelineFragment
 
 class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
 
-    private val viewPagerAdapter by lazy { ViewPagerAdapter(requireActivity(), titles) }
     private val titles by lazy {
         arrayOf(
             getString(R.string.kr_home),
@@ -30,17 +29,11 @@ class TabFragment : BaseFragment<FragmentTabBinding>(R.layout.fragment_tab) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated() called with: view = [$view], savedInstanceState = [$savedInstanceState]")
 
-        binding.viewPager.adapter = viewPagerAdapter
+        binding.viewPager.adapter = ViewPagerAdapter(requireActivity(), titles)
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = titles[position]
         }.attach()
-    }
-
-    override fun onPause() {
-        binding.viewPager.adapter = null
-
-        super.onPause()
     }
 
 
