@@ -42,6 +42,7 @@ dependencies {
 
     // Room
     implementation 'androidx.room:room-runtime:2.4.2'
+    implementation 'androidx.navigation:navigation-runtime-ktx:2.3.5'
     kapt 'androidx.room:room-compiler:2.4.2'
 
     // Lifecycle

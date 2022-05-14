@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tab.home.bottom_menu.RandomRecommendActivity">
+
+    <Button
+        android:id="@+id/goto_main_btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:text="← 메인화면"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="87dp"
+        android:text="오늘 볼 영화를 랜덤으로 추천해드립니다!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/RandomRecommend_btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="158dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:text="추천 시작" />
+
+    <ViewFlipper
+        android:id="@+id/RandomRecommend_vf"
+        android:layout_width="400px"
+        android:layout_height="80px"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="130dp"
+        android:background="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RandomRecommend_btnStart">
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="인생은 아름다워"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="맘마미아"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="시네마 천국"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="포레스트 검프"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="나홀로 집에"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="인터스텔라"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="끝까지 간다"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="400px"
+            android:layout_height="80px"
+            android:text="인사이드 아웃"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/white" />
+
+    </ViewFlipper>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

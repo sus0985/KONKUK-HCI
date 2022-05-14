@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_main_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OBTT">
-
+        <activity
+            android:name=".ui.tab.home.bottom_menu.RandomRecommendActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
@@ -25,7 +27,6 @@
         </activity>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.login.LoginActivity" />
-
     </application>
 
 </manifest>
