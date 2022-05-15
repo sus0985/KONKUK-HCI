@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OBTT">
         <activity
+            android:name=".ui.tab.home.bottom_menu.CustomerServiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.tab.home.bottom_menu.RandomRecommendActivity"
             android:exported="false" />
         <activity
