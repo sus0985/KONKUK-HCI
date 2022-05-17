@@ -61,7 +61,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
 
         override fun onBindViewHolder(holder: ContentsViewHolder, position: Int) {
-            holder.bind(item[position])
+            holder.bind(item[position], position)
         }
 
         override fun getItemCount() = item.size
@@ -114,11 +114,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
 
-    private class ContentsViewHolder(private val binding: ItemContentsBinding) :
+    private inner class ContentsViewHolder(private val binding: ItemContentsBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Contents) {
+        fun bind(item: Contents, position: Int) {
             binding.textTitle.text = item.title
+
+            binding.root.setOnClickListener {
+                when (position) {
+                    0 -> (requireActivity() as MainActivity).goToRandomRecommend()
+                    1 -> (requireActivity() as MainActivity).goToRecommendedByAge()
+                    3 -> (requireActivity() as MainActivity).goToCustomerService()
+                    else -> Unit
+                }
+            }
         }
     }
 
