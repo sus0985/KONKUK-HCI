@@ -33,6 +33,9 @@
         </activity>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.VideoDetailActivity" />
+        <activity android:name=".ui.ReviewDetailActivity" />
+
     </application>
 
 </manifest>

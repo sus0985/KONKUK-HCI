@@ -15,6 +15,7 @@ import com.hci.obtt.databinding.ItemRankingBinding
 import com.hci.obtt.model.Contents
 import com.hci.obtt.model.Video
 import com.hci.obtt.ui.base.BaseFragment
+import com.hci.obtt.ui.main.MainActivity
 import com.hci.obtt.ui.tab.TabViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -32,12 +33,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingViewHolder {
-            val binding = ItemRankingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val binding =
+                ItemRankingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return RankingViewHolder(binding)
         }
 
         override fun onBindViewHolder(holder: RankingViewHolder, position: Int) {
-            holder.bind(item[position])
+            holder.bind(item[position], (requireActivity() as MainActivity)::goToVideoDetail)
         }
 
         override fun getItemCount(): Int = item.size
@@ -53,7 +55,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContentsViewHolder {
-            val binding = ItemContentsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val binding =
+                ItemContentsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return ContentsViewHolder(binding)
         }
 
@@ -65,7 +68,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     }
 
-    private val recommendationAdapter by lazy { RecommendationAdapter() }
+    private val recommendationAdapter by lazy { RecommendationAdapter((requireActivity() as MainActivity)::goToVideoDetail) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -94,10 +97,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
 
-    private class RankingViewHolder(private val binding: ItemRankingBinding) : RecyclerView.ViewHolder(binding.root) {
+    private class RankingViewHolder(private val binding: ItemRankingBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Video) {
+        fun bind(item: Video, onClick: () -> Unit) {
             with(binding) {
+                root.setOnClickListener { onClick() }
                 imageThumbnail.clipToOutline = true
                 Glide.with(imageThumbnail).load(item.thumbnail).into(imageThumbnail)
                 textTitle.text = item.title
@@ -109,7 +114,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
 
-    private class ContentsViewHolder(private val binding: ItemContentsBinding) : RecyclerView.ViewHolder(binding.root) {
+    private class ContentsViewHolder(private val binding: ItemContentsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Contents) {
             binding.textTitle.text = item.title

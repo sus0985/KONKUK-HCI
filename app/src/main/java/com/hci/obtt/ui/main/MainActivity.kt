@@ -1,5 +1,6 @@
 package com.hci.obtt.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -8,6 +9,7 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivityMainBinding
+import com.hci.obtt.ui.VideoDetailActivity
 import com.hci.obtt.ui.base.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
@@ -24,5 +26,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             setupWithNavController(navController)
             itemIconTintList = null
         }
+    }
+
+    fun goToVideoDetail() {
+        startActivity(Intent(this, VideoDetailActivity::class.java))
     }
 }
