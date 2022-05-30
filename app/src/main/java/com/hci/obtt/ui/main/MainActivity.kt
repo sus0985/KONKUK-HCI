@@ -1,5 +1,6 @@
 package com.hci.obtt.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -8,7 +9,11 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivityMainBinding
+import com.hci.obtt.ui.VideoDetailActivity
 import com.hci.obtt.ui.base.BaseActivity
+import com.hci.obtt.ui.tab.home.bottom_menu.CustomerServiceActivity
+import com.hci.obtt.ui.tab.home.bottom_menu.RandomRecommendActivity
+import com.hci.obtt.ui.tab.home.bottom_menu.RecommendedByAgeActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
@@ -24,5 +29,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             setupWithNavController(navController)
             itemIconTintList = null
         }
+    }
+
+    fun goToVideoDetail() {
+        startActivity(Intent(this, VideoDetailActivity::class.java))
+    }
+
+    fun goToRandomRecommend() {
+        startActivity(Intent(this, RandomRecommendActivity::class.java))
+    }
+
+    fun goToRecommendedByAge() {
+        startActivity(Intent(this, RecommendedByAgeActivity::class.java))
+    }
+
+    fun goToCustomerService() {
+        startActivity(Intent(this, CustomerServiceActivity::class.java))
     }
 }
