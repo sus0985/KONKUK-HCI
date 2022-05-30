@@ -124,6 +124,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 when (position) {
                     0 -> (requireActivity() as MainActivity).goToRandomRecommend()
                     1 -> (requireActivity() as MainActivity).goToRecommendedByAge()
+                    2 -> (requireActivity() as MainActivity).goToShare()
                     3 -> (requireActivity() as MainActivity).goToCustomerService()
                     else -> Unit
                 }

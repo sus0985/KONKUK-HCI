@@ -14,6 +14,7 @@ import com.hci.obtt.ui.base.BaseActivity
 import com.hci.obtt.ui.tab.home.bottom_menu.CustomerServiceActivity
 import com.hci.obtt.ui.tab.home.bottom_menu.RandomRecommendActivity
 import com.hci.obtt.ui.tab.home.bottom_menu.RecommendedByAgeActivity
+import com.hci.obtt.ui.tab.home.bottom_menu.ShareActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
@@ -41,6 +42,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     fun goToRecommendedByAge() {
         startActivity(Intent(this, RecommendedByAgeActivity::class.java))
+    }
+
+    fun goToShare() {
+        startActivity(Intent(this, ShareActivity::class.java))
     }
 
     fun goToCustomerService() {
