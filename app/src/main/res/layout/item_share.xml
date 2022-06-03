@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/rect_rounded_white"
-    android:layout_margin="20dp"
+    android:background="@color/white"
+    android:layout_margin="5dp"
     android:layout_gravity="center">
 
     <LinearLayout
@@ -54,9 +54,9 @@
 
     <TextView
         android:id="@+id/sharetext"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="20dp"
         android:textColor="@color/black"
         android:text="넷플릭스 요금제 공유하실 분?"
         android:layout_marginTop="10dp" />
