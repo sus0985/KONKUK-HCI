@@ -26,10 +26,16 @@ class ShareActivity : AppCompatActivity() {
         setContentView(R.layout.activity_share)
 
         val gotobtn : Button = findViewById<View>(R.id.goto_main_btn4) as Button
+        val gotobtn2 : Button = findViewById<View>(R.id.btn5) as Button
 
         gotobtn.setOnClickListener {
             val Intent = Intent(this, MainActivity::class.java)
             startActivity(Intent)
+        }
+
+        gotobtn2.setOnClickListener {
+            val Intent2 = Intent(this, ShareActivity2::class.java)
+            startActivity(Intent2)
         }
 
         imageId = arrayOf(
@@ -66,6 +72,21 @@ class ShareActivity : AppCompatActivity() {
 
         newArrayList = arrayListOf<ShareData>()
         getUserdata()
+
+        if(intent.hasExtra("ottnamekey") && intent.hasExtra("textmulti")) {
+            imageId = imageId.plus(R.drawable.user05)
+            nickName = nickName.plus("영화평론은이동진")
+            //ottName = ottName.plus(intent.getStringExtra("ottnamekey").toString())
+            //shareText = shareText.plus(intent.getStringExtra("textmulti").toString())
+            ottName = ottName.plus("Netflix")
+            shareText = shareText.plus("넷플공유 ㄱㄱ")
+
+            var sharing = ShareData(imageId[4], nickName[4], ottName[4], shareText[4])
+            newArrayList.add(sharing)
+            newRecyclerView.adapter?.notifyItemInserted(4)
+            newRecyclerView.adapter = ShareRecyclerViewAdapter(newArrayList)
+
+        }
     }
 
     private fun getUserdata() {

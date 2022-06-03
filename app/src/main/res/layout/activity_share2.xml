@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".ui.tab.home.bottom_menu.ShareActivity2">
+
+    <Button
+        android:id="@+id/goto_main_btn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="40dp"
+        android:text="← 이전화면"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:text="어떤 OTT서비스를 공유할까요?"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/RadioGroup10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/Radio_nexflix"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Netflix"
+                    android:textColor="@color/white"
+                    android:checked="true"
+                    android:buttonTint="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/Radio_watcha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Watcha"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/Radio_disney"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Disney+"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/Radio_tving"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tving"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/Radio_wavve"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Wavve"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
+
+                <RadioButton
+                    android:id="@+id/Radio_appletv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Appletv+"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
+            </LinearLayout>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/TextMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="내용을 적어주세요(최대 공백포함 300자)"
+        android:textSize="12sp"
+        android:padding="15px"
+        android:ems="10"
+        android:gravity="start|top"
+        android:background="@color/white"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20px"
+        android:text="올리기" />
+
+    <TextView
+        android:id="@+id/ottpassname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="TextView" />
+
+</LinearLayout>
