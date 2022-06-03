@@ -15,34 +15,40 @@ class CommunityFragment : BaseFragment<FragmentCommunityBinding>(R.layout.fragme
 
     private val communityList = listOf(
         Community(
+            R.drawable.user06,
             "3스파영원해",
-            "마블세계관 타임라인 정리 및 정주행 정리글",
-            "#넷플릭스 #존잼"
+            "스파이더맨 정주행 달린다",
+            "#디즈니플러스 #마블 #스파이더맨 #톰홀랜드"
         ),
         Community(
-            "3스파영원해",
-            "마블세계관 타임라인 정리 및 정주행 정리글",
-            "#넷플릭스 #존잼"
+            R.drawable.user07,
+            "집돌이LV99",
+            "스릴러 장르가 짱이다(주관 100%)",
+            "#넷플릭스 #스릴러"
         ),
         Community(
-            "3스파영원해",
-            "마블세계관 타임라인 정리 및 정주행 정리글",
-            "#넷플릭스 #존잼"
+            R.drawable.user08,
+            "움파룸파",
+            "요즘 볼만한 거 추천 좀 해주세요",
+            "#추천 #넷플릭스 #왓챠"
         ),
         Community(
-            "3스파영원해",
-            "마블세계관 타임라인 정리 및 정주행 정리글",
-            "#넷플릭스 #존잼"
+            R.drawable.user09,
+            "다둥이아빠",
+            "얘들이랑 짱구극장판 봤어요^^",
+            "#가족영화 #애니메이션"
         ),
         Community(
-            "3스파영원해",
-            "마블세계관 타임라인 정리 및 정주행 정리글",
-            "#넷플릭스 #존잼"
+            R.drawable.user10,
+            "안녕내이름은",
+            "코난! 탐정이죠!",
+            "#코난 #존잼"
         ),
         Community(
-            "3스파영원해",
-            "마블세계관 타임라인 정리 및 정주행 정리글",
-            "#넷플릭스 #존잼"
+            R.drawable.user11,
+            "야구가세상을구한다",
+            "퍼펙트게임 보고 감동받았어요ㅠㅠ",
+            "#야구영화 #뭉클"
         )
     )
 
@@ -79,7 +85,7 @@ class CommunityAdapter(private val list: List<Community>) : RecyclerView.Adapter
 class CommunityViewHolder(private val binding: ItemCommunityBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(item: Community) {
-        binding.userImage.setImageResource(R.drawable.user05)
+        binding.userImage.setImageResource(item.img)
         binding.userId.text = item.id
         binding.textDetail.text = item.detail
         binding.textTag.text = item.tag
