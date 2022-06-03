@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <FrameLayout
+            android:id="@+id/back_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/rect_rounded_white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/user_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="24dp"
+            android:background="@drawable/background_circle_stroke_2dp"
+            android:clipToOutline="true"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@id/back_frame"
+            app:layout_constraintTop_toTopOf="@id/back_frame" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="40dp"
+            android:layout_height="3dp"
+            android:background="@color/blue"
+            app:layout_constraintBottom_toTopOf="@id/user_id"
+            app:layout_constraintStart_toStartOf="@id/user_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="IDIDIDIDID"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/user_image"
+            app:layout_constraintTop_toTopOf="@id/user_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="asdfasdfasdfasdfasdfasdf\n\n\n\n\n"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/back_frame"
+            app:layout_constraintStart_toStartOf="@id/back_frame"
+            app:layout_constraintTop_toBottomOf="@id/user_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/rect_rounded_white"
+            android:backgroundTint="#EFEFEF"
+            android:padding="3dp"
+            android:text="#넷플릭스 #존잼"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

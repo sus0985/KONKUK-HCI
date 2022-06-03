@@ -2,6 +2,12 @@ package com.hci.obtt.model
 
 object DummyDataPool {
 
+    fun getVideoById(id: Int): Video {
+        return if (id < 0) videos.first()
+        else if (id > videos.size) videos.last()
+        else videos[id]
+    }
+
     val videos = listOf(
         Video(
             0,

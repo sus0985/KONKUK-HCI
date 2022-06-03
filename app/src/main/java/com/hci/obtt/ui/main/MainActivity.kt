@@ -9,6 +9,7 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivityMainBinding
+import com.hci.obtt.model.Video
 import com.hci.obtt.ui.VideoDetailActivity
 import com.hci.obtt.ui.base.BaseActivity
 import com.hci.obtt.ui.tab.home.bottom_menu.CustomerServiceActivity
@@ -34,6 +35,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     fun goToVideoDetail() {
         startActivity(Intent(this, VideoDetailActivity::class.java))
+    }
+
+    fun goToVideoDetail(id: Int) {
+        val intent = Intent(this, VideoDetailActivity::class.java).apply {
+            putExtra("id", id)
+        }
+
+        startActivity(intent)
     }
 
     fun goToRandomRecommend() {

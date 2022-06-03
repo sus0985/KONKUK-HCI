@@ -100,9 +100,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private class RankingViewHolder(private val binding: ItemRankingBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Video, onClick: () -> Unit) {
+        fun bind(item: Video, onClick: (Int) -> Unit) {
             with(binding) {
-                root.setOnClickListener { onClick() }
+                root.setOnClickListener { onClick(item.id) }
                 imageThumbnail.clipToOutline = true
                 Glide.with(imageThumbnail).load(item.thumbnail).into(imageThumbnail)
                 textTitle.text = item.title
