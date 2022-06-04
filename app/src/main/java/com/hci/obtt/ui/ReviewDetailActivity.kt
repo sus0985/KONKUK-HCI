@@ -42,6 +42,10 @@ class ReviewDetailActivity :
         binding.progress.animationDuration = 3000L
         binding.progress.animateProgressChange(94f)
         binding.recycler.adapter = adapter
+
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
     }
 
 

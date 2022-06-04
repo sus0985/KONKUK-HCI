@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hci.obtt.R
@@ -82,6 +83,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             Glide.with(imageViewSpotLight)
                 .load("https://user-images.githubusercontent.com/83066991/167290386-55bb769f-607a-485d-ac9b-8210057a9f2b.png")
                 .into(imageViewSpotLight)
+
+            editTextSearch.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+            }
         }
 
         lifecycleScope.launch {
