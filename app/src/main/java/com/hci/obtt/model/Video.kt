@@ -11,4 +11,5 @@ data class Video(
     val runningTime: String,
     val genre: String,
     val actors: List<Actor>,
+    val story: String,
 ) : Serializable
