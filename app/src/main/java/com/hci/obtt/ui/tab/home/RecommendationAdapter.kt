@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.hci.obtt.databinding.ItemRecommendationBinding
 import com.hci.obtt.model.Video
 
-class RecommendationAdapter(private val onClick: ()->Unit)
+class RecommendationAdapter(private val onClick: (Int)->Unit)
     : ListAdapter<Video, RecommendationAdapter.RecommendationViewHolder>(RECOMMENDATION_DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendationViewHolder {
@@ -29,9 +29,9 @@ class RecommendationAdapter(private val onClick: ()->Unit)
     class RecommendationViewHolder(private val binding: ItemRecommendationBinding)
         : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Video, onClick: ()->Unit) {
+        fun bind(item: Video, onClick: (Int)->Unit) {
             with(binding) {
-                root.setOnClickListener { onClick() }
+                root.setOnClickListener { onClick(item.id) }
                 imageThumbnail.clipToOutline = true
                 Glide.with(imageThumbnail).load(item.thumbnail).into(binding.imageThumbnail)
                 textTitle.text = item.title

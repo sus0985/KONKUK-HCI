@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hci.obtt.R
 import com.hci.obtt.databinding.ActivityReviewDetailBinding
 import com.hci.obtt.databinding.ItemReviewBinding
+import com.hci.obtt.model.DummyDataPool
 import com.hci.obtt.model.Review
 import com.hci.obtt.ui.base.BaseActivity
 
@@ -42,6 +43,12 @@ class ReviewDetailActivity :
         binding.progress.animationDuration = 3000L
         binding.progress.animateProgressChange(94f)
         binding.recycler.adapter = adapter
+
+        val id = intent.getIntExtra("id", 0)
+
+        val data = DummyDataPool.videos[id]
+
+        binding.textTitle.text = data.title
 
         binding.back.setOnClickListener {
             onBackPressed()

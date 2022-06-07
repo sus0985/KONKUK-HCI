@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hci.obtt.R
 import com.hci.obtt.databinding.FragmentTimelineBinding
+import com.hci.obtt.databinding.ItemOttBinding
 import com.hci.obtt.databinding.ItemTimelineBinding
 import com.hci.obtt.model.DummyDataPool
 import com.hci.obtt.model.Video
@@ -25,6 +26,7 @@ class TimelineFragment : BaseFragment<FragmentTimelineBinding>(R.layout.fragment
 
 
     private class TimelineAdapter(private val list: List<Video>) : RecyclerView.Adapter<TimelineViewHolder>() {
+
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimelineViewHolder {
             val binding = ItemTimelineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return TimelineViewHolder(binding)
@@ -41,10 +43,40 @@ class TimelineFragment : BaseFragment<FragmentTimelineBinding>(R.layout.fragment
 
     private class TimelineViewHolder(private val binding: ItemTimelineBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        class OttViewHolder(private val binding: ItemOttBinding) : RecyclerView.ViewHolder(binding.root) {
+            fun bind(position: Int) {
+                binding.image.setImageResource(
+                    when (position) {
+                        1 -> R.drawable.netflix
+                        2 -> R.drawable.disney
+                        else -> R.drawable.watcha
+                    }
+                )
+            }
+
+        }
+
         fun bind(item: Video) {
             Glide.with(binding.imageThumbnail).load(item.thumbnail).into(binding.imageThumbnail)
             binding.textTitle.text = item.title
             binding.textDetail.text = item.genre
+
+            binding.recycler.adapter = object : RecyclerView.Adapter<OttViewHolder>() {
+
+                val size = (1..3).random()
+
+                override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OttViewHolder {
+                    val binding = ItemOttBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                    return OttViewHolder(binding)
+                }
+
+                override fun onBindViewHolder(holder: OttViewHolder, position: Int) {
+                    holder.bind(position)
+                }
+
+                override fun getItemCount() = size
+
+            }
         }
     }
 

@@ -23,7 +23,9 @@ class VideoDetailActivity :
 
         binding.imageVideo.clipToOutline = true
 
-        val data = DummyDataPool.videos.first()
+        val id = intent.getIntExtra("id", 0)
+
+        val data = DummyDataPool.videos[id]
 
         Glide.with(this).load(data.thumbnail).into(binding.imageVideo)
 
@@ -56,7 +58,9 @@ class VideoDetailActivity :
         binding.buttonBack.setOnClickListener { finish() }
 
         binding.textInfoMore.setOnClickListener {
-            startActivity(Intent(this, ReviewDetailActivity::class.java))
+            startActivity(Intent(this, ReviewDetailActivity::class.java).apply {
+                putExtra("id", id)
+            })
         }
     }
 
