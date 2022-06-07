@@ -20,7 +20,6 @@ import com.hci.obtt.ui.tab.home.bottom_menu.ShareActivity
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private lateinit var navController: NavController
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

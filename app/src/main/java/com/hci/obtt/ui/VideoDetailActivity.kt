@@ -29,7 +29,7 @@ class VideoDetailActivity :
 
         Glide.with(this).load(data.thumbnail).into(binding.imageVideo)
 
-        binding.recyclerActor.adapter = ActorAdapter(DummyDataPool.videos.first().actors)
+        binding.recyclerActor.adapter = ActorAdapter(data.actors)
 
         with(binding) {
 
@@ -45,14 +45,7 @@ class VideoDetailActivity :
             rating.title.text = "Rating"
             rating.running.text = "4.5"
 
-            binding.textDesc.text = """죽기 싫다
-죽이고 싶지 않다
-
-좀비 바이러스 발생의 시발점이 된 효산고등학교.
-이곳에 갇힌 학생들은 필사적으로 탈출구를 찾아야만 한다.
-
-좀비 바이러스가 퍼진 한 고등학교에 고립된 이들과 그들을 구하려는 자들이 한 치 앞을 알 수 없는 극한의 상황을 겪으며 벌어지는 이야기
-"""
+            binding.textDesc.text = data.story
         }
 
         binding.buttonBack.setOnClickListener { finish() }
