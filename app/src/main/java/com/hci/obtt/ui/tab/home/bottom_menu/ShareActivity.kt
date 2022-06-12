@@ -1,10 +1,10 @@
 package com.hci.obtt.ui.tab.home.bottom_menu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hci.obtt.R
@@ -18,6 +18,8 @@ class ShareActivity : AppCompatActivity() {
     lateinit var imageId : Array<Int>
     lateinit var nickName : Array<String>
     lateinit var ottName : Array<String>
+    lateinit var personimg : Array<Int>
+    lateinit var personNum : Array<String>
     lateinit var shareText : Array<String>
 
 
@@ -59,6 +61,20 @@ class ShareActivity : AppCompatActivity() {
             "Disney+"
         )
 
+        personimg = arrayOf(
+            R.drawable.ic_person,
+            R.drawable.ic_person,
+            R.drawable.ic_person,
+            R.drawable.ic_person
+        )
+
+        personNum = arrayOf(
+            "2/4",
+            "0/2",
+            "1/4",
+            "2/2"
+        )
+
         shareText = arrayOf(
             "넷플릭스 스탠다드 요금제 공유하실분?",
             "넷플 프리미엄 선착순 한 분이여!",
@@ -79,9 +95,11 @@ class ShareActivity : AppCompatActivity() {
             //ottName = ottName.plus(intent.getStringExtra("ottnamekey").toString())
             //shareText = shareText.plus(intent.getStringExtra("textmulti").toString())
             ottName = ottName.plus("Netflix")
+            personimg = personimg.plus(R.drawable.ic_person)
+            personNum = personNum.plus("0/4")
             shareText = shareText.plus("넷플공유 ㄱㄱ")
 
-            var sharing = ShareData(imageId[4], nickName[4], ottName[4], shareText[4])
+            var sharing = ShareData(imageId[4], nickName[4], ottName[4], personimg[4], personNum[4], shareText[4])
             newArrayList.add(sharing)
             newRecyclerView.adapter?.notifyItemInserted(4)
             newRecyclerView.adapter = ShareRecyclerViewAdapter(newArrayList)
@@ -91,7 +109,7 @@ class ShareActivity : AppCompatActivity() {
 
     private fun getUserdata() {
         for(i in imageId.indices) {
-            val share = ShareData(imageId[i], nickName[i], ottName[i], shareText[i])
+            val share = ShareData(imageId[i], nickName[i], ottName[i], personimg[i], personNum[i], shareText[i])
             newArrayList.add(share)
         }
 

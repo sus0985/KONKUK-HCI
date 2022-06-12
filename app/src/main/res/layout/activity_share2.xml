@@ -116,6 +116,20 @@
     </LinearLayout>
 
     <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="모집인원을 적어주세요(최대 4명)"
+        android:textSize="12sp"
+        android:padding="15px"
+        android:background="@color/white"
+        android:inputType="number" />
+
+    <EditText
         android:id="@+id/TextMultiLine"
         android:layout_width="match_parent"
         android:layout_height="200dp"

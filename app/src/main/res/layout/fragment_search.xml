@@ -375,11 +375,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
-                android:background="#686DCD"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
