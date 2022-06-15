@@ -3,6 +3,7 @@ package com.hci.obtt.ui.tab.home.bottom_menu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
@@ -26,6 +27,8 @@ class ShareRecyclerViewAdapter(private val ShareDataList : ArrayList<ShareData>)
         holder.shareuserimg.setImageResource(currentItem.shareuserimgs)
         holder.sharenickname.text = currentItem.sharenicknames
         holder.shareottname.text = currentItem.shareottnames
+        holder.sharepersonimg.setImageResource(currentItem.sharepersons)
+        holder.sharepersonnum.text = currentItem.sharepersonsnum
         holder.sharetext.text = currentItem.sharetexts
     }
 
@@ -37,6 +40,8 @@ class ShareRecyclerViewAdapter(private val ShareDataList : ArrayList<ShareData>)
         val shareuserimg : ShapeableImageView = itemView.findViewById(R.id.shareuserimg)
         val sharenickname : TextView = itemView.findViewById(R.id.sharenickname)
         val shareottname : TextView = itemView.findViewById(R.id.shareottname)
+        val sharepersonimg : ImageView = itemView.findViewById(R.id.sharepersonimg)
+        val sharepersonnum : TextView = itemView.findViewById(R.id.sharepersonnum)
         val sharetext : TextView = itemView.findViewById(R.id.sharetext)
 
     }

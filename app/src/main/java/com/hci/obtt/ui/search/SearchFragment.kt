@@ -1,25 +1,20 @@
 package com.hci.obtt.ui.search
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
+import androidx.navigation.fragment.findNavController
 import com.hci.obtt.R
 import com.hci.obtt.databinding.FragmentSearchBinding
 import com.hci.obtt.ui.base.BaseFragment
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment_search) {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_search_result, container, false)
-        val btn: Button = view.findViewById(R.id.filter_btn)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        //nav 연결
-
-        return view
+        with(binding) {
+            filterBtn.setOnClickListener {
+                findNavController().navigate(R.id.action_searchFragment_to_searchResultFragment)
+            }
+        }
     }
 }

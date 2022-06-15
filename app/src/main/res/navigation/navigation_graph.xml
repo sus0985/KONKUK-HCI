@@ -19,7 +19,16 @@
         android:id="@+id/searchFragment"
         android:name="com.hci.obtt.ui.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_searchResultFragment"
+            app:destination="@+id/searchResultFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.hci.obtt.ui.search.SearchResultFragment"
+        android:label="fragment_search_result"
+        tools:layout="@layout/fragment_search_result"/>
 
     <fragment
         android:id="@+id/bookmarkFragment"
